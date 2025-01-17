@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 import os
 
 # Fixed frame x^-y^-z^
-p = (1/sqrt(3), -1/sqrt(6), 1/sqrt(2)) # original point coordenates
+p = np.array([1/sqrt(3), -1/sqrt(6), 1/sqrt(2)]) # original point coordenates
 
-
+# a)
 # Rotate 30 degrees on x-axis
 theta = np.radians(30)
 Rx = np.array([[1,          0,          0],
@@ -34,6 +34,11 @@ pRotated = Rz @ pRotated
 print("Original point: ", p)
 print("Rotated point: ", pRotated)
 
+# Calculate magnitudes to test if they are the same (both are one)
+magnitude_original = np.linalg.norm(p)
+magnitude_rotated = np.linalg.norm(pRotated)
+print("Magnitude of original vector: ", np.round(magnitude_original, 2))
+print("Magnitude of rotated vector: ", np.round(magnitude_rotated, 2))
 
 # Plot results and save
 fig = plt.figure()
@@ -41,9 +46,6 @@ ax = fig.add_subplot(111, projection='3d')
 ax.scatter(p[0], [1], p[2], label="Original")
 ax.scatter(pRotated[0], pRotated[1], pRotated[2], label="Rotated")
 
-ax.set_xlim([-0.6, 1])
-ax.set_ylim([-0.6, 1])
-ax.set_zlim([-0.6, 1])
 ax.set_xlabel('X-axis')
 ax.set_ylabel('Y-axis')
 ax.set_zlabel('Z-axis')
@@ -54,9 +56,7 @@ image_path = os.path.join(current_dir, 'rotated_point.png')
 
 plt.savefig(image_path)
 
-
+# b)
 # Find R so pRotated = R @ p
-
-print("R")
 R = Rx @ Ry @ Rz
-print(R)
+print("R: \n", R)
