@@ -18,7 +18,7 @@ yb = np.array([0, 0, -1])
 zb = np.cross(xb, yb)
 origin_b = np.array([0, 2, 0])
 
-# a)
+## a)
 # Plot diagram showing {a} and {b} relative to {s}
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
@@ -54,4 +54,36 @@ image_path = os.path.join(current_dir, 'diagram.png')
 
 plt.savefig(image_path)
 
-# b)
+## b)
+# Calculate rotation matrixes Rsa and Rsb
+Rsa = np.array([xa, ya, za]).T
+Rsb = np.array([xb, yb, zb]).T
+
+# Calculate transformation matrices Tsa and Tsb
+# homogeneous transformation matrices in R3:
+# T = [ R p ]
+#     [ 0 1 ]
+
+Tsa = np.identity(4)
+Tsa[:3, :3] = Rsa
+Tsa[:3, 3] = origin_a
+print("Transformation matrix Tsa: \n", Tsa)
+
+Tsb = np.identity(4)
+Tsb[:3, :3] = Rsb
+Tsb[:3, 3] = origin_b
+print("Transformation matrix Tsa: \n", Tsb)
+
+
+# Save results to a .txt file
+results_path = os.path.join(current_dir, 'results.txt')
+with open(results_path, 'w') as file:
+    file.write("Rotation matrix Rsa:\n")
+    file.write(f"{Rsa}\n\n")
+    file.write("Rotation matrix Rsb:\n")
+    file.write(f"{Rsb}\n\n")
+    file.write("Transformation matrix Tsa:\n")
+    file.write(f"{Tsa}\n\n")
+    file.write("Transformation matrix Tsb:\n")
+    file.write(f"{Tsb}\n\n")
+
