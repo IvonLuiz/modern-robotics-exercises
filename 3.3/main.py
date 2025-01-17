@@ -24,6 +24,7 @@ def findRotationMatrix(p, p_prime):
     phi = np.arctan2(sin_phi, cos_phi)
     #print(np.rad2deg(phi))
 
+    # Rodrigues' Rotation matrix formula
     # R(u, ϕ) = u . u^T + (I − u . u^T) cos(ϕ) + Su . sin(ϕ)
     I = np.identity(3)
     ux = u[0]
@@ -43,7 +44,7 @@ def checkRotationMatrix(R, p, p_prime, file):
     Checks if the Rotation matrix was calculated correctly from p' = R·p.
     """
     file.write("Rotation matrix calculated: \n")
-    file.write(f"{R}\n")
+    file.write(f"{R}\n\n")
     
     # Check if R^T · R is identity
     identity_check = np.round(R.T @ R, 2)
