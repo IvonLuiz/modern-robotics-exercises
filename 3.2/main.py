@@ -17,22 +17,23 @@ pRotated = Rx @ p
 
 # Rotate 135 degrees on y-axis
 theta = np.radians(135)
-Ry = np.array([[cos(theta), 0, sin(theta)],
-               [0, 1, 0],
+Ry = np.array([[cos(theta),  0, sin(theta)],
+               [0,           1,          0],
                [-sin(theta), 0, cos(theta)]])
 
 pRotated = Ry @ pRotated
 
 # Rotate -120 degrees on z-axis
 theta = np.radians(-120)
-Rz = np.array([[cos(theta), -sin(theta), 0],
-               [sin(theta), cos(theta), 0],
-               [0, 0, 1]])
+Rz = np.array([[cos(theta), -sin(theta),    0],
+               [sin(theta),  cos(theta),    0],
+               [0,                    0,    1]])
 
 pRotated = Rz @ pRotated
 
 print("Original point: ", p)
 print("Rotated point: ", pRotated)
+
 
 # Plot results and save
 fig = plt.figure()
@@ -52,3 +53,10 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 image_path = os.path.join(current_dir, 'rotated_point.png')
 
 plt.savefig(image_path)
+
+
+# Find R so pRotated = R @ p
+
+print("R")
+R = Rx @ Ry @ Rz
+print(R)
