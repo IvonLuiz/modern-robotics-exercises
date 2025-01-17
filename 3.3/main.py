@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
 
 def findRotationMatrix(p, p_prime):
@@ -36,50 +37,56 @@ def findRotationMatrix(p, p_prime):
 
     return R
 
-def checkRotationMatrix(R, p, p_prime):
+
+def checkRotationMatrix(R, p, p_prime, file):
     """
     Checks if the Rotation matrix was calculated correctly from p' = R·p.
     """
-    print("Rotation matrix calculated: \n", R)
+    file.write("Rotation matrix calculated: \n")
+    file.write(f"{R}\n")
     
     # Check if R^T · R is identity
     identity_check = np.round(R.T @ R, 2)
-    print("Checking if R^T · R = I:", identity_check)
+    file.write("Checking if R^T · R = I:\n")
+    file.write(f"{identity_check}\n")
     
     if np.allclose(identity_check, np.identity(3)):
-        print("R^T · R is approximately the identity matrix. ✓")
+        file.write("R^T · R is approximately the identity matrix. ✓\n")
     else:
-        print("R^T · R is NOT the identity matrix. ✗")
+        file.write("R^T · R is NOT the identity matrix. ✗\n")
     
     # Check if R·p is the same as p' original
     rotated_p = R @ p
-    print("\nOriginal vector after rotation (R · p):\n", rotated_p)
-    print("Expected transformed vector (p'):\n", p_prime)
+    file.write("\nOriginal vector after rotation (R · p):\n")
+    file.write(f"{np.round(rotated_p, 2)}\n")
+    file.write("Expected transformed vector (p'):\n")
+    file.write(f"{np.round(p_prime, 2)}\n")
     
     if np.allclose(rotated_p, p_prime):
-        print("Rotation is correct. ✓")
+        file.write("Rotation is correct. ✓\n")
     else:
-        print("Rotation is NOT correct. ✗")
-    print()
+        file.write("Rotation is NOT correct. ✗\n")
+    file.write("\n")
 
 
-# a)
-print("a)")
-p1 =        np.array([np.sqrt(2), 0, 2])
-p1_prime =  np.array([0, 2, np.sqrt(2)])
-R = findRotationMatrix(p1, p1_prime)
-checkRotationMatrix(R, p1, p1_prime)
+results_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'results.txt')
+with open(results_path, 'w') as file:
+    file.write("a)\n")
+    p1 =        np.array([np.sqrt(2), 0, 2])
+    p1_prime =  np.array([0, 2, np.sqrt(2)])
+    R = findRotationMatrix(p1, p1_prime)
+    checkRotationMatrix(R, p1, p1_prime, file)
 
-# b)
-print("b)")
-p2 =        np.array([1, 1, -1])
-p2_prime =  np.array([1/np.sqrt(2), 1/np.sqrt(2), -np.sqrt(2)])
-R = findRotationMatrix(p2, p2_prime)
-checkRotationMatrix(R, p2, p2_prime)
+    # b)
+    file.write("b)\n")
+    p2 =        np.array([1, 1, -1])
+    p2_prime =  np.array([1/np.sqrt(2), 1/np.sqrt(2), -np.sqrt(2)])
+    R = findRotationMatrix(p2, p2_prime)
+    checkRotationMatrix(R, p2, p2_prime, file)
 
-# c)
-print("c)")
-p3 =        np.array([np.sqrt(2), 0, 2])
-p3_prime =  np.array([0, 2, np.sqrt(2)])
-R = findRotationMatrix(p3, p3_prime)
-checkRotationMatrix(R, p3, p3_prime)
+    # c)
+    file.write("c)\n")
+    p3 =        np.array([np.sqrt(2), 0, 2])
+    p3_prime =  np.array([0, 2, np.sqrt(2)])
+    R = findRotationMatrix(p3, p3_prime)
+    checkRotationMatrix(R, p3, p3_prime, file)
