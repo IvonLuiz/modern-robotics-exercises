@@ -1,0 +1,57 @@
+a)
+Diagram saved to: /home/ivon/code/modern-robotics-exercises/3.16/diagram.png
+b)
+Rsa: 
+ [[ 0 -1  0]
+ [ 0  0 -1]
+ [ 1  0  0]]
+Rsb: 
+ [[ 1  0  0]
+ [ 0  0  1]
+ [ 0 -1  0]]
+Tsa: 
+ [[ 0. -1.  0.  3.]
+ [ 0.  0. -1.  0.]
+ [ 1.  0.  0.  0.]
+ [ 0.  0.  0.  1.]]
+Tsb: 
+ [[ 1.  0.  0.  0.]
+ [ 0.  0.  1.  2.]
+ [ 0. -1.  0.  0.]
+ [ 0.  0.  0.  1.]]
+c)
+Inverse transformation matrix Tsb: 
+ [[ 1.  0.  0.  0.]
+ [ 0.  0. -1.  0.]
+ [ 0.  1.  0. -2.]
+ [ 0.  0.  0.  1.]]
+Diagram saved to: /home/ivon/code/modern-robotics-exercises/3.16/diagram_with_inverse.png
+d)
+Tab: 
+ [[ 0. -1.  0.  0.]
+ [-1.  0.  0.  3.]
+ [ 0.  0. -1. -2.]
+ [ 0.  0.  0.  1.]]
+Diagram saved to: /home/ivon/code/modern-robotics-exercises/3.16/diagram_ab.png
+e)
+T1: 
+ [[ 0.  0. -1.  1.]
+ [ 0.  1.  0.  0.]
+ [ 1.  0.  0.  0.]
+ [ 0.  0.  0.  1.]]
+Post-multiplying corresponding to a body frame transformation of Tsa, we are rotating and translating the body frame {a} to the fixed frame {s}.
+T2: 
+ [[ 0. -1.  0.  3.]
+ [ 1.  0.  0.  2.]
+ [ 0.  0.  1.  0.]
+ [ 0.  0.  0.  1.]]
+Pre-multiplying corresponding to a fixed frame transformation of Tsa, we are rotating and translating the fixed frame {s} to the body frame {a}.
+f)
+Point pb in {b} coordinates:  [1 2 3]
+Point ps in {s} coordinates:  [ 1.  5. -2.]
+Point ps in {s} coordinates:  [1 2 3]
+Point p' in {b} coordinates:  [ 1.  5. -2.]
+Point p'' in {b} coordinates:  [ 1. -3.  0.]
+Interpretation:
+p' should be interpreted as changing coordinates from the {s} frame to the {b} frame without moving the point p.
+p'' should be interpreted as changing coordinates from the {s} frame to the {b} frame without moving the point p.
