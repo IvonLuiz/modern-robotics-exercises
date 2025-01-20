@@ -152,9 +152,10 @@ ax.set_xlabel('X-axis')
 ax.set_ylabel('Y-axis')
 ax.set_zlabel('Z-axis')
 
-plot_frame(origin_a, xa, ya, za, 'darkblue', 'b', ax=ax)
+plot_frame(origin_a, xa, ya, za, 'darkblue', 'a', ax=ax)
 plot_frame(origin_b, xb, yb, zb, 'darkblue', 'b', ax=ax)
 plot_frame(origin_ab, Tab[:3, 0], Tab[:3, 1], Tab[:3, 2], 'red', 'b_inv', ax=ax)
+
 image_path = os.path.join(current_dir, 'diagram_ab.png')
 plt.savefig(image_path)
 print('Diagram saved to:', image_path)
