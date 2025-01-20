@@ -207,4 +207,4 @@ print("Point p'' in {b} coordinates: ", pb_double_prime[:3])
 
 print("Interpretation:")
 print("p' should be interpreted as changing coordinates from the {s} frame to the {b} frame without moving the point p.")
-print("p'' should be interpreted as changing coordinates from the {s} frame to the {b} frame without moving the point p.")
+print("p'' should be interpreted as moving the location of the point p in space, but the coordinates remain represented in the same {s} frame.")

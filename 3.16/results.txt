@@ -54,4 +54,4 @@ Point p' in {b} coordinates:  [ 1.  5. -2.]
 Point p'' in {b} coordinates:  [ 1. -3.  0.]
 Interpretation:
 p' should be interpreted as changing coordinates from the {s} frame to the {b} frame without moving the point p.
-p'' should be interpreted as changing coordinates from the {s} frame to the {b} frame without moving the point p.
+p'' should be interpreted as moving the location of the point p in space, but the coordinates remain represented in the same {s} frame.
