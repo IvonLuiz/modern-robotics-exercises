@@ -1,0 +1,17 @@
+Initial configuration T:
+[[1 0 0 2]
+ [0 1 0 0]
+ [0 0 1 0]
+ [0 0 0 1]]
+
+Screw axis {q, s, h}:
+q: [0 2 0]
+s: [0 0 1]
+h: 2
+Total distance traveled along the screw axis (theta): 3.141592653589793
+Diagram saved to: /home/ivon/code/modern-robotics-exercises/3.48/transformations.png
+Final configuration T1: 
+ [[-1.   -0.    0.   -2.  ]
+ [ 0.   -1.    0.    4.  ]
+ [ 0.    0.    1.    6.28]
+ [ 0.    0.    0.    1.  ]]
