@@ -58,5 +58,5 @@ plt.savefig(image_path)
 
 # b)
 # Find R so pRotated = R @ p
-R = Rx @ Ry @ Rz
+R = Rz @ Ry @ Rx
 print("R: \n", R)
