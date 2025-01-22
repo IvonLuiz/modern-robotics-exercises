@@ -1,54 +1,36 @@
-a)
+Initial points: 
+Matrices of points: 
+ [[ 1.41  1.    0.  ]
+ [ 0.    1.    2.83]
+ [ 2.   -1.    0.  ]]
+Matrices of points after rotation: 
+ [[ 0.    0.71 -1.41]
+ [ 2.    0.71  1.41]
+ [ 1.41 -1.41 -2.  ]] 
+
 Rotation matrix calculated: 
-[[ 0.77345908 -0.32037724 -0.54691816]
- [ 0.6224318   0.54691816  0.55987425]
- [ 0.11974851 -0.77345908  0.6224318 ]]
+
+[[ 0.71 -0.5  -0.5 ]
+ [ 0.71  0.5   0.5 ]
+ [-0.   -0.71  0.71]]
+
 
 Checking if R^T · R = I:
-[[ 1.  0. -0.]
- [ 0.  1. -0.]
- [-0. -0.  1.]]
+
+[[ 1. -0. -0.]
+ [-0.  1.  0.]
+ [-0.  0.  1.]]
+
 R^T · R is approximately the identity matrix. ✓
 
-Original vector after rotation (R · p):
-[0.   2.   1.41]
-Expected transformed vector (p'):
-[0.   2.   1.41]
-Rotation is correct. ✓
-
-b)
-Rotation matrix calculated: 
-[[ 0.97140452 -0.02859548  0.23570226]
- [-0.02859548  0.97140452  0.23570226]
- [-0.23570226 -0.23570226  0.94280904]]
-
-Checking if R^T · R = I:
-[[1. 0. 0.]
- [0. 1. 0.]
- [0. 0. 1.]]
-R^T · R is approximately the identity matrix. ✓
 
 Original vector after rotation (R · p):
-[ 0.71  0.71 -1.41]
-Expected transformed vector (p'):
-[ 0.71  0.71 -1.41]
-Rotation is correct. ✓
 
-c)
-Rotation matrix calculated: 
-[[ 0.77345908 -0.32037724 -0.54691816]
- [ 0.6224318   0.54691816  0.55987425]
- [ 0.11974851 -0.77345908  0.6224318 ]]
-
-Checking if R^T · R = I:
-[[ 1.  0. -0.]
- [ 0.  1. -0.]
- [-0. -0.  1.]]
-R^T · R is approximately the identity matrix. ✓
-
-Original vector after rotation (R · p):
 [0.   2.   1.41]
+
 Expected transformed vector (p'):
+
 [0.   2.   1.41]
+
 Rotation is correct. ✓
 
